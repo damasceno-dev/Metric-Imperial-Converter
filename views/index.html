@@ -43,26 +43,26 @@
           <hr />
           <section>
             <h3 className='text-xl mt-3 mb-2'>Example usage</h3>
-            <div className ='text-black flex flex-col gap-2'>
-            <code className='bg-gray-200' >/api/convert?input=4gal</code>
-            <code className='bg-gray-200' >/api/convert?input=1/2km</code>
-            <code className='bg-gray-200' >/api/convert?input=5.4/3lbs</code>
-            <code className='bg-gray-200' >/api/convert?input=kg</code>
+            <div className ='text-black flex flex-col gap-2 px-36'>
+            <code className='w-1/2 bg-gray-200' >/api/convert?input=4gal</code>
+            <code className='w-1/2 bg-gray-200' >/api/convert?input=1/2km</code>
+            <code className='w-1/2 bg-gray-200' >/api/convert?input=5.4/3lbs</code>
+            <code className='w-1/2 bg-gray-200' >/api/convert?input=kg</code>
             </div>
             <h3 className='text-xl mt-3 mb-2'>Example return</h3>
-            <div className ='text-black flex flex-col gap-2'>
+            <div className ='text-black flex flex-col gap-2 px-36'>
             <code className='bg-gray-200' >&#123; initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895 kilometers'  &#125;</code>
             </div>
           </section>
-          <hr />
+          <hr className='mt-5' />
           <section>
-            <div id='testui' >
+            <div id='testui'>
               <h3 className='text-xl mt-3 mb-2'>Front-End</h3>
-              <form id="convertForm" className="border flex flex-col w-1/2" onSubmit={handleSubmit}>
+              <form id="convertForm" className="border flex flex-col w-1/4 mx-36" onSubmit={handleSubmit}>
                 <input value={valueToConvert} onChange={(evemt) => setValueToConvert(event.target.value)} type="text" id="convertField" name="input" placeholder="3.1mi" className='text-black'/>
                 <button id="convert" type="submit" value='Convert!' className='hover:bg-indigo-900 transition-all duration-200'>Convert!</button>
               </form>
-              {convertedValue && <p id='result'>{convertedValue.string}</p>}
+              {convertedValue && <p id='result' className='mt-5'>{convertedValue.string}</p>}
               <code id='jsonResult' className='text-black bg-gray-200'>{JSON.stringify(convertedValue)}</code>
             </div>
           </section>
